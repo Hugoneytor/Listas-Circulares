@@ -7,15 +7,15 @@ class Main{
             document.querySelector("#tablaArt"),            
         );        
     document.querySelector("#btnAgregar").addEventListener("click",()=>{
-        let codigo = document.querySelector("#codigo").value;
-        let nombre = document.querySelector("#nombre").value;
-        let descripcion = document.querySelector("#descripcion").value;
+        let numero = Number(document.querySelector("#codigo").value);
+        let matricula = Number(document.querySelector("#nombre").value);
+          
         let toString = document.querySelector("#toString");
         
         let objRuta = {
-            codigo: codigo,
-            nombre: nombre,
-            descripcion: descripcion
+            numero: numero,
+            matricula: matricula,
+
         };
 
         let ruta = new Ruta(objRuta);

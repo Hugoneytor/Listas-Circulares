@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sistema de Rutas</title>
+    
+</head>
+<body>
+    <h2>Ruta:</h2>
+    <div>
+        <div>
+            <label for="codigo">Número:</label>
+            <input type="number" id="codigo">
+        </div>
+        <br>
+        <div>
+            <label for="nombre">Matrícula:</label>
+            <input type="text" id="nombre"> 
+        </div>
+        <br>
+        <div>
+            <button type="button" id="btnAgregar">Agregar Ruta</button>
+        </div>
+        <br>
+
+    </div>
+    <br>
+    <div>
+        <!--Tabla de Artículos-->
+        <h3>Rutas Totales</h3>
+        <table id="tablaArt" class="table">
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Matrícula</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <h4>toString</h4>
+    <p id="toString"></p>
+</body>
+<script src="main.js" type="module"></script>
+</html>

@@ -11,7 +11,7 @@ export default class Base{
     }
 
     crearRecoorrido(baseInicio, horaInicio, horaFin){
-      
+
     }
 
     _borrar(row,ruta){
@@ -22,8 +22,8 @@ export default class Base{
         btnBorrar.addEventListener("click",()=>{
           this.borrarRuta(row, ruta);
         });
-        row.cells[5].innerHTML="";
-        row.cells[5].appendChild(btnBorrar);
+        row.cells[2].innerHTML="";
+        row.cells[2].appendChild(btnBorrar);
     }
 
     AgregarRuta(objRuta){
@@ -31,7 +31,7 @@ export default class Base{
         this._primeraRuta = objRuta;
         this._ultimaRuta = objRuta;
       }else{
-      this._agregarYOrdenar(objArticulo);
+      this._agregarYOrdenar(objRuta);
       }
       // }else{
       //   let anterior = this._ultimaRuta;
@@ -46,18 +46,18 @@ export default class Base{
       
      console.log(this._primeraRuta);
     }
-    _agregarYOrdenar(objArticulo){
-      let obj = objArticulo;
-     if(obj < this._primerArticulo){
-       obj.siguiente = this._primerArticulo;
-       this._primerArticulo.anterior = obj;
-       this._primerArticulo = obj;
+    _agregarYOrdenar(objRuta){
+      let obj = objRuta;
+     if(obj < this._primeraRuta){
+       obj.siguiente = this._primeraRuta;
+       this._primeraRuta.anterior = obj;
+       this._primeraRuta = obj;
      }else if(obj > this._ultimoArticulo){
        obj.anterior = this._ultimoArticulo;
        this._ultimoArticulo.siguiente = obj;
        this._ultimoArticulo = obj;
      }else{
-       let guardar = this._primerArticulo.siguiente;
+       let guardar = this._primeraRuta.siguiente;
        while(guardar != null && obj.siguiente == null){
          if(guardar > obj){
            obj.siguiente = guardar;
@@ -77,7 +77,7 @@ export default class Base{
     borrarRuta(row,ruta){
       let pos = this._buscarRuta(ruta.codigo);
       if(pos.siguiente == pos){
-        pos = null;
+        this._primeraRuta = null;
       }else{
       if(pos == this._primeraRuta){
         this._primeraRuta = pos.siguiente;
