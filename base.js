@@ -52,10 +52,10 @@ export default class Base{
        obj.siguiente = this._primeraRuta;
        this._primeraRuta.anterior = obj;
        this._primeraRuta = obj;
-     }else if(obj > this._ultimoArticulo){
-       obj.anterior = this._ultimoArticulo;
-       this._ultimoArticulo.siguiente = obj;
-       this._ultimoArticulo = obj;
+     }else if(obj > this._ultimaRuta){
+       obj.anterior = this._ultimaRuta;
+       this._ultimaRuta.siguiente = obj;
+       this._ultimaRuta = obj;
      }else{
        let guardar = this._primeraRuta.siguiente;
        while(guardar != null && obj.siguiente == null){
